@@ -1,7 +1,6 @@
 node default {
-  package {'Midnight Commander':
-    name => 'mc',
-    command => '/bin/yum',
-    ensure => 'absent'
+  service {'Exim Mail Server':
+    name => 'exim',
+    ensure => 'running'
   }
 }
