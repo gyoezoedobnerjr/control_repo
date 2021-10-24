@@ -1,7 +1,7 @@
 node default {
-  package {'Exim Mail Server'
+  package {'Exim Mail Server':
     name => 'exim',
-    command => '/bin/yum',
+    command => '/bin/yam',
     ensure => 'present'
   }
   service {'Running Exim Mail Server':
