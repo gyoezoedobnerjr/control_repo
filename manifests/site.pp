@@ -1,6 +1,11 @@
 node default {
-service {'Sendmail Mail Server':
-    name => 'sendmail',
-    ensure => 'running'
-  }
+    package {'Sendmail Mail Server':
+        name => 'sendmail',
+        command => '/bin/yum',
+        ensure => 'present'
+    }
+    service {'Running Sendmail Mail Server':
+        name => 'sendmail',
+        ensure => 'running'
+    }
 }
