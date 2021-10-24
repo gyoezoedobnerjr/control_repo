@@ -7,7 +7,7 @@ node default {
     ensure => 'present',
     allowdupe => 'false'
   }
-  file {'/root/humbug'
+  file {'/root/humbug':
     ensure => 'file',
     content => 'Just some text.',
     owner => 'tapsihapsi',
