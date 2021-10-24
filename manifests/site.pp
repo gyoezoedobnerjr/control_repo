@@ -1,6 +1,6 @@
 node default {
-  package {'mc':
-    name => 'Midnight Commander',
+  package {'Midnight Commander':
+    name => 'mc',
     command => '/bin/yum',
     ensure => 'installed'
   }
