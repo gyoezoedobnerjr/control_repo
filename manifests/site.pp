@@ -1,14 +1,14 @@
 node default {
   group {'kacabajka':
-    ensure => 'present',
+    ensure => 'absent',
     allowdupe => 'false'    
   }
   user {'tapsihapsi':
-    ensure => 'present',
+    ensure => 'absent',
     allowdupe => 'false'
   }
   file {'/root/humbug':
-    ensure => 'file',
+    ensure => 'absent',
     content => 'Just some text.',
     owner => 'tapsihapsi',
     group => 'kacabajka'
