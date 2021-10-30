@@ -15,11 +15,3 @@ node /^web/ {
 node /^db/ {
   include role::db_server
 }
-
-node /^ssh/ {
-  include role::ssh_client
-}
-
-node /^ssh\.db/ {
-  include role::ssh_db_client
-}
