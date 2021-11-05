@@ -1,6 +1,7 @@
-class minecraft {
-  $jarUrl = 'https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar'
+class minecraft (
+  $jarUrl = 'https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar',
   $install_dir = '/opt/minecraft'
+){
   file {$install_dir:
     ensure => directory
   }
@@ -18,7 +19,9 @@ class minecraft {
   }
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
-    source => 'puppet:///modules/minecraft/minecraft.service'
+    content => epp('minecraft/minecraft.service',{
+      installDir => $install_dir
+    })
   }
   service {'minecraft':
     ensure => running,
