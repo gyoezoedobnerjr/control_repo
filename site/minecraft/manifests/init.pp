@@ -1,6 +1,6 @@
 class minecraft {
   file {'/opt/minecraft':
-    ensure => directory,
+    ensure => directory
   }
   file {'/opt/minecraft/minecraft_server.jar':
     ensure => file,
@@ -19,6 +19,6 @@ class minecraft {
   }
   service {'minecraft':
     ensure => running,
-    enable = > true
+    enable => true
   }
 }
